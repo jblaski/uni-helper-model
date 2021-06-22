@@ -8,8 +8,17 @@ package com.jblaski.unihelpermodel.model;
 //  from csv
 //        UBUKPRN,UKPRN,KISCOURSEID,KISMODE,LOCID
 
-public class CourseLocation {
-    private String locationId;
-    private String ucasCourseCodes;
+import lombok.Builder;
+import lombok.Data;
 
+import javax.persistence.Entity;
+
+@Builder
+@Data
+public class CourseLocation {
+    private String PUBUKPRN;
+    private String UKPRN;
+    private String KISCOURSEID;
+    private String KISMODE;
+    private String LOCID;
 }

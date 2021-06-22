@@ -35,39 +35,48 @@ package com.jblaski.unihelpermodel.model;
 //
 //  from csv PUBUKPRN,UKPRN,ASSURL,ASSURLW,CRSECSTURL,CRSECSTURLW,CRSEURL,CRSEURLW,DISTANCE,EMPLOYURL,EMPLOYURLW,FOUNDATION,HONOURS,HECOS,HECOS,HECOS,HECOS,HECOS,KISCOURSEID,KISMODE,LDCS,LDCS,LDCS,LOCCHNGE,LTURL,LTURLW,NHS,NUMSTAGE,SANDWICH,SUPPORTURL,SUPPORTURLW,TITLE,TITLEW,UCASPROGID,UKPRNAPPLY,YEARABROAD,KISAIMCODE,KISLEVEL
 
+import javax.persistence.Entity;
+
+@Entity
 public class KISCourse {
-
-    private String assessmentUrl;
-    private String assessmentUrlWelsh;
-    private String courseCostUrl;
-    private String courseCostUrlWelsh;
-    private String coursePageUrl;
-    private String coursePageUrlWelsh;
-    private String distance;
-    private String employmentOpportunitiesUrl;
-    private String employmentOpportunitiesUrlWelsh;
-    private String foundation;
-    private String honours;
-    private String hecos;
-    private String kisCourseId;
-    private String mode;
-    private String learnDirectClassificationSystem;
-    private String locationChanges;
-    private String learningAndTeachingMethods;
-    private String learningAndTeachingMethodsWelsh;
-    private String nhs;
-    private String numberOfStages;
-    private String sandwichAvailability;
-    private String financialSupportUrl;
-    private String financialSupportUrlWelsh;
-    private String title;
-    private String titleWelsh;
-    private String ucasProgramCodes;
-    private String ukprnApplyVia;
-    private String yearAbroad;
-    private String kisAimCode;
-    private String kisLevel;
-    private String sbjCahLevelSubjectCode;
-
-
+    private String PUBUKPRN;
+    private String UKPRN;
+    private String ASSURL;
+    private String ASSURLW;
+    private String CRSECSTURL;
+    private String CRSECSTURLW;
+    private String CRSEURL;
+    private String CRSEURLW;
+    private String DISTANCE;
+    private String EMPLOYURL;
+    private String EMPLOYURLW;
+    private String FOUNDATION;
+    private String HONOURS;
+    private String HECOS1;
+    private String HECOS2;
+    private String HECOS3;
+    private String HECOS4;
+    private String HECOS5;
+    private String KISCOURSEID;
+    private String KISMODE;
+    private String LDCS1;
+    private String LDCS2;
+    private String LDCS3;
+    private String LOCCHNGE;
+    private String LTURL;
+    private String LTURLW;
+    private String NHS;
+    private String NUMSTAGE;
+    private String SANDWICH;
+    private String SUPPORTURL;
+    private String SUPPORTURLW;
+    private String TITLE;
+    private String TITLEW;
+    private String UCASPROGID;
+    private String UKPRNAPPLY;
+    private String YEARABROAD;
+    private String KISAIMCODE;
+    private String KISLEVEL;
 }
+
+//

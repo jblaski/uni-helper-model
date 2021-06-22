@@ -1,6 +1,5 @@
 package com.jblaski.unihelpermodel.model;
 
-//  TODO split entities into resources and entities (e.g. raw copy of csv in strings vs meaningful datatypes)
 //  from https://www.hesa.ac.uk/collection/c20061/unistats_dataset_file_structure
 //        Institution.UKPRN 	UK provider reference number, which is the unique identifier allocated to providers by the UK Register of Learning Providers (UKRLP) 	1/1 	8
 //        Institution.PUBUKPRN 	Publication UK provider reference number for where the course is primarily taught 	1/1 	8
@@ -14,13 +13,21 @@ package com.jblaski.unihelpermodel.model;
 //  from csv
 //        PUBUKPRN,UKPRN,COUNTRY,PUBUKPRNCOUNTRY,TEFOutcome,APROutcome,SUURL,SUURLW
 
+import lombok.Builder;
+import lombok.Data;
+
+import javax.persistence.Entity;
+
+@Builder
+@Data
+@Entity
 public class Institution {
-    private long ukprn;
-    private long publicationUkprn;
-    private String country;
-    private String publicationCountry;
-    private String annualProviderReviewOutcome;
-    private String teachingExcellenceFramework;
-    private String studentUnionUrl;
-    private String studentUnionUrlWelsh;
+    private String PUBUKPRN;
+    private String UKPRN;
+    private String COUNTRY;
+    private String PUBUKPRNCOUNTRY;
+    private String APROutcome;
+    private String TEFOutcome;
+    private String SUURL;
+    private String SUURLW;
 }

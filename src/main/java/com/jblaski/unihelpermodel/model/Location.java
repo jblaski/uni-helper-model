@@ -16,18 +16,26 @@ package com.jblaski.unihelpermodel.model;
 //  from csv
 //        UKPRN,ACCOMURL,ACCOMURLW,LOCID,LOCNAME,LOCNAMEW,LATITUDE,LONGITUDE,LOCUKPRN,LOCCOUNTRY,SUURL,SUURLW
 
-public class Location {
-    private String accommodationUrl;
-    private String accomodationUrlWelsh;
-    private String country;
-    private String id;
-    private String name;
-    private String nameWelsh;
-    private Double latitude;
-    private Double longitude;
-    private long locUkprn;
-    private String studentUnionUrl;
-    private String studentUnionUrlWelsh;
+import lombok.Builder;
+import lombok.Data;
 
-    private long ukprn;
+import javax.persistence.Entity;
+
+@Builder
+@Data
+@Entity
+public class Location {
+    private String UKPRN;
+    private String ACCOMURL;
+    private String ACCOMURLW;
+    private String LOCCOUNTRY;
+    private String LOCID;
+    private String LOCNAME;
+    private String LOCNAMEW;
+    private String LATITUDE;
+    private String LONGITUDE;
+    private String LOCUKPRN;
+    private String SUURL;
+    private String SUURLW;
+
 }
