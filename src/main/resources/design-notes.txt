@@ -1,0 +1,7 @@
+The data objects the REST API handles will have two forms
+    - The "entity", which is stored in the database. This is closely aligned to the structure of the raw data. (Is this the "DAO"?)
+    - The "resource", which is the DTO. This is created on the fly and is structured in a more friendly format.
+
+An assembler will be used to convert between model entities and resources. For example, if a GET is performed on some ID, the DAO will
+be retrieved from the database using this ID. This will then be converted into a Resource before being returned. Resources get directly
+converted into JSON objects.  
