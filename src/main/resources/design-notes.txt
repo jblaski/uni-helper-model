@@ -4,4 +4,4 @@ The data objects the REST API handles will have two forms
 
 An assembler will be used to convert between model entities and resources. For example, if a GET is performed on some ID, the DAO will
 be retrieved from the database using this ID. This will then be converted into a Resource before being returned. Resources get directly
-converted into JSON objects.  
+converted into JSON objects.
