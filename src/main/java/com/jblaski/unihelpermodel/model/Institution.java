@@ -13,8 +13,10 @@ package com.jblaski.unihelpermodel.model;
 //  from csv
 //        PUBUKPRN,UKPRN,COUNTRY,PUBUKPRNCOUNTRY,TEFOutcome,APROutcome,SUURL,SUURLW
 
+import com.jblaski.unihelpermodel.resource.InstitutionDTO;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 
@@ -30,4 +32,17 @@ public class Institution {
     private String TEFOutcome;
     private String SUURL;
     private String SUURLW;
+
+    public InstitutionDTO toDto() {
+        return InstitutionDTO.builder()
+                        .publicationUkprn(Long.parseLong(PUBUKPRN))
+                        .ukprn(Long.parseLong(UKPRN))
+                        .country(COUNTRY)
+                        .publicationUkprnCountry(PUBUKPRNCOUNTRY)
+                        .annualProviderReviewOutcome(APROutcome)
+                        .teachingExcellenceFrameworkReviewOutcome(TEFOutcome)
+                        .studentUnionUrl(SUURL)
+                        .studentUnionUrlWelsh(SUURLW)
+                        .build();
+    }
 }
