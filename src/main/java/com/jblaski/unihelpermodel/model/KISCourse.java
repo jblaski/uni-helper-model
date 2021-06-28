@@ -34,6 +34,14 @@ package com.jblaski.unihelpermodel.model;
 //        KISCourse.SBJ 	CAH Level subject code 	0/unbounded 	11
 //
 //  from csv PUBUKPRN,UKPRN,ASSURL,ASSURLW,CRSECSTURL,CRSECSTURLW,CRSEURL,CRSEURLW,DISTANCE,EMPLOYURL,EMPLOYURLW,FOUNDATION,HONOURS,HECOS,HECOS,HECOS,HECOS,HECOS,KISCOURSEID,KISMODE,LDCS,LDCS,LDCS,LOCCHNGE,LTURL,LTURLW,NHS,NUMSTAGE,SANDWICH,SUPPORTURL,SUPPORTURLW,TITLE,TITLEW,UCASPROGID,UKPRNAPPLY,YEARABROAD,KISAIMCODE,KISLEVEL
+//
+//  investigation results: uniquely identified by numstage + ukprn + kiscourseid.
+//  possible solution:  if ukprn+kiscourseid not unique
+//                          find all courses for above composite
+//                          take the entry that doesn't have a blank numstage (seems to either have a number, or be blank)
+//
+//
+//
 
 import lombok.Builder;
 import lombok.Data;

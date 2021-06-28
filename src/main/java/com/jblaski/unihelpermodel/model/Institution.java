@@ -12,11 +12,12 @@ package com.jblaski.unihelpermodel.model;
 //
 //  from csv
 //        PUBUKPRN,UKPRN,COUNTRY,PUBUKPRNCOUNTRY,TEFOutcome,APROutcome,SUURL,SUURLW
+//
+//  investigation results: none of these fields alone are unique
 
 import com.jblaski.unihelpermodel.resource.InstitutionDTO;
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 
