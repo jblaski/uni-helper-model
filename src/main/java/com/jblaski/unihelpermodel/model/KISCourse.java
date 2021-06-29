@@ -40,29 +40,35 @@ package com.jblaski.unihelpermodel.model;
 //                          find all courses for above composite
 //                          take the entry that doesn't have a blank numstage (seems to either have a number, or be blank)
 //
-//
+//  further investigation: actually, UKPRN + KISCourseID + KISMODE may be the best unique identifier
 //
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 
+@AllArgsConstructor
 @Builder
 @Data
 @Entity
+@IdClass(KISCourseId.class)
+@NoArgsConstructor
+@Table(name="Course")
 public class KISCourse {
     private String PUBUKPRN;
-    private String UKPRN;
-    private String ASSURL;
-    private String ASSURLW;
-    private String CRSECSTURL;
-    private String CRSECSTURLW;
-    private String CRSEURL;
-    private String CRSEURLW;
+    @Id private String UKPRN;
+    @Column(length = 512) private String ASSURL;
+    @Column(length = 512) private String ASSURLW;
+    @Column(length = 512) private String CRSECSTURL;
+    @Column(length = 512) private String CRSECSTURLW;
+    @Column(length = 512) private String CRSEURL;
+    @Column(length = 512) private String CRSEURLW;
     private String DISTANCE;
-    private String EMPLOYURL;
-    private String EMPLOYURLW;
+    @Column(length = 512) private String EMPLOYURL;
+    @Column(length = 512) private String EMPLOYURLW;
     private String FOUNDATION;
     private String HONOURS;
     private String HECOS1;
@@ -70,19 +76,19 @@ public class KISCourse {
     private String HECOS3;
     private String HECOS4;
     private String HECOS5;
-    private String KISCOURSEID;
-    private String KISMODE;
+    @Id private String KISCOURSEID;
+    @Id private String KISMODE;
     private String LDCS1;
     private String LDCS2;
     private String LDCS3;
     private String LOCCHNGE;
-    private String LTURL;
-    private String LTURLW;
+    @Column(length = 512) private String LTURL;
+    @Column(length = 512) private String LTURLW;
     private String NHS;
     private String NUMSTAGE;
     private String SANDWICH;
-    private String SUPPORTURL;
-    private String SUPPORTURLW;
+    @Column(length = 512) private String SUPPORTURL;
+    @Column(length = 512) private String SUPPORTURLW;
     private String TITLE;
     private String TITLEW;
     private String UCASPROGID;

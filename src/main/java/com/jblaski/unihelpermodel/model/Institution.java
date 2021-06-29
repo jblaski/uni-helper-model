@@ -23,7 +23,7 @@ import javax.persistence.Entity;
 
 @Builder
 @Data
-@Entity
+//@Entity
 public class Institution {
     private String PUBUKPRN;
     private String UKPRN;

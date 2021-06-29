@@ -23,7 +23,7 @@ import javax.persistence.Entity;
 
 @Builder
 @Data
-@Entity
+//@Entity
 public class Location {
     private String UKPRN;
     private String ACCOMURL;

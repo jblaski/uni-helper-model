@@ -43,6 +43,32 @@ public class DataIntegrity {
     }
 
     @Test
+    public void kisCourseIdCombinedWithUkprnAndKisModeShouldBeUnique() {
+        List<KISCourse> kisCourses = KISCourseParser.readAllFromFile(DATA_BASE_DIR + "KISCOURSE.csv");
+        if (kisCourses.isEmpty()) {
+            log.warn("Couldn't run test; no data found to investigate");
+        } else {
+            Map<String, KISCourse> map = new HashMap<>();
+            List<KISCourse> duplicatedId = new LinkedList<>();
+
+            for (KISCourse course : kisCourses) {
+                KISCourse courseFromMap = map.get(course.getKISCOURSEID() + "-" + course.getUKPRN() + "-" + course.getKISMODE());
+                if (courseFromMap != null) {
+                    duplicatedId.add(courseFromMap);
+                    duplicatedId.add(course);
+                }
+                map.put(course.getKISCOURSEID() + "-" + course.getUKPRN() + "-" + course.getKISMODE(), course);
+            }
+
+            if (!duplicatedId.isEmpty()) {
+                log.warn("Of " + kisCourses.size() + " courses, " + duplicatedId.size() + " did not have unique KISCOURSEID + UKPRN + KISMODE");
+            }
+
+            assertEquals(0, duplicatedId.size());
+        }
+    }
+
+    @Test
     public void ukprnShouldBeUnique() {
         List<Institution> institutions = InstitutionParser.readAllFromFile(DATA_BASE_DIR + "INSTITUTION.csv");
         if (institutions.isEmpty()) {
